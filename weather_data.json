@@ -1,0 +1,41 @@
+{
+    "location": {
+        "name": "Boston",
+        "region": "Lincolnshire",
+        "country": "United Kingdom",
+        "lat": 53.1,
+        "lon": -0.13,
+        "tz_id": "Europe/London",
+        "localtime_epoch": 1693062474,
+        "localtime": "2023-08-26 16:07"
+    },
+    "current": {
+        "last_updated_epoch": 1693062000,
+        "last_updated": "2023-08-26 16:00",
+        "temp_c": 17.0,
+        "temp_f": 62.6,
+        "is_day": 1,
+        "condition": {
+            "text": "Light rain shower",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/353.png",
+            "code": 1240
+        },
+        "wind_mph": 6.9,
+        "wind_kph": 11.2,
+        "wind_degree": 230,
+        "wind_dir": "SW",
+        "pressure_mb": 1007.0,
+        "pressure_in": 29.74,
+        "precip_mm": 0.0,
+        "precip_in": 0.0,
+        "humidity": 83,
+        "cloud": 50,
+        "feelslike_c": 17.0,
+        "feelslike_f": 62.6,
+        "vis_km": 10.0,
+        "vis_miles": 6.0,
+        "uv": 4.0,
+        "gust_mph": 6.9,
+        "gust_kph": 11.2
+    }
+}
