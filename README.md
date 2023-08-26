@@ -25,6 +25,10 @@ You will need the following software installed on your machine:
 ### Start the Kafka server:
 bin/kafka-server-start.sh config/server.properties
 
+### Create a Kafka topic for weather data:
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic weather-data-topic
+
+
 #### Installing Dependencies
 pip install -r requirements.txt
 
