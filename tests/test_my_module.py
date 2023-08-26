@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import Mock, patch
-from WeatherDataProducer import get_and_save_weather_data
+from PythonScripts.WeatherDataProducer import get_and_save_weather_data
 
 
 class TestGetAndSaveWeatherData(unittest.TestCase):
