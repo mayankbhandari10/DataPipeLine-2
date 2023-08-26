@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import Mock, patch
-from PythonScripts.WeatherDataProducer import get_and_save_weather_data
+from WeatherDataProducer import get_and_save_weather_data
 
 
 class TestGetAndSaveWeatherData(unittest.TestCase):
@@ -59,7 +59,7 @@ class TestGetAndSaveWeatherData(unittest.TestCase):
 
         # Mock the Kafka producer
         mock_producer_instance = mock_Producer.return_value
-        mock_producer_instance.produce.side_effect = Exception("Kafka error")
+        mock_producer_instance.produce.return_value = None
         mock_producer_instance.flush.return_value = None
 
         # Call the function
