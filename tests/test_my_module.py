@@ -4,8 +4,8 @@ from PythonScripts.WeatherDataProducer import get_and_save_weather_data
 
 
 class TestGetAndSaveWeatherData(unittest.TestCase):
-    @patch("PythonScripts.WeatherDataProducer.requests.get")
-    @patch("PythonScripts.WeatherDataProducer.Producer")
+    @patch("WeatherDataProducer.requests.get")
+    @patch("WeatherDataProducer.Producer")
     def test_get_and_save_weather_data(self, mock_Producer, mock_requests_get):
         # Mock the response from requests.get
         mock_response = Mock()
@@ -25,8 +25,8 @@ class TestGetAndSaveWeatherData(unittest.TestCase):
         mock_producer_instance.produce.assert_called_once()
         mock_producer_instance.flush.assert_called_once()
 
-    @patch("PythonScripts.WeatherDataProducer.requests.get")
-    @patch("PythonScripts.WeatherDataProducer.Producer")
+    @patch("WeatherDataProducer.requests.get")
+    @patch("WeatherDataProducer.Producer")
     def test_get_and_save_weather_data_request_failure(
         self, mock_Producer, mock_requests_get
     ):
@@ -46,8 +46,8 @@ class TestGetAndSaveWeatherData(unittest.TestCase):
         mock_requests_get.assert_called_once()
         mock_producer_instance.produce.assert_not_called()
 
-    @patch("PythonScripts.WeatherDataProducer.requests.get")
-    @patch("PythonScripts.WeatherDataProducer.Producer")
+    @patch("WeatherDataProducer.requests.get")
+    @patch("WeatherDataProducer.Producer")
     def test_get_and_save_weather_data_kafka_failure(
         self, mock_Producer, mock_requests_get
     ):
