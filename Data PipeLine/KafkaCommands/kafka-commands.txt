@@ -1,0 +1,33 @@
+# Start ZooKeeper server
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+# Start Kafka broker
+bin/kafka-server-start.sh config/server.properties
+
+# Create the Kafka topic
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic weather-data-topic
+
+# List all topics
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+# Produce messages to the topic
+bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic weather-data-topic
+
+# Consume messages from the topic
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic weather-data-topic --from-beginning
+
+# Describe the topic
+bin/kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic weather-data-topic
+
+# Alter topic configuration
+bin/kafka-topics.sh --alter --bootstrap-server localhost:9092 --topic weather-data-topic --partitions 2
+
+# Delete the topic
+bin/kafka-topics.sh --delete --bootstrap-server localhost:9092 --topic weather-data-topic
+
+# Describe Kafka brokers
+bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092
+
+# Describe Kafka consumer groups
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-group
